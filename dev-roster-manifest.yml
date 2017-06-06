@@ -1,0 +1,18 @@
+applications:
+- name: roster
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  routes:
+  - route: roster-batty-tachometer.cfapps.io
+  buildpack: java_buildpack
+  env:
+    APP_VERSION: blue
+    ROSTER_A: X
+    ROSTER_B: "Y"
+    ROSTER_C: Z
+  services:
+  - my-logs
+  - cldb
+  - newrelic
+  stack: cflinuxfs2
